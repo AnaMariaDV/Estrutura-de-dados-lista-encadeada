@@ -1,8 +1,8 @@
-// ler_lista.c
+
 #include "lib.h"
 
 
-#define LINHA_MAX 2048  // buffer de 2 KB por linha
+#define LINHA_MAX 2048  
 
 void lerLista(Node **cabeca, const char *nomeArquivo) {
     clock_t inicio = clock();
@@ -12,7 +12,7 @@ void lerLista(Node **cabeca, const char *nomeArquivo) {
         perror("Erro ao abrir arquivo");
         return;
     }
-    setvbuf(arq, NULL, _IOFBF, 1 << 20);  // buffer de I/O de 1 MiB
+    setvbuf(arq, NULL, _IOFBF, 1 << 20);  
 
     *cabeca = NULL;
     Node *tail = NULL;
@@ -20,7 +20,7 @@ void lerLista(Node **cabeca, const char *nomeArquivo) {
     char nome[50];
     int rg;
 
-    // 1) Usando fgets + sscanf
+
     while (fgets(linha, sizeof(linha), arq)) {
         if (sscanf(linha, "%49[^,],%d", nome, &rg) == 2) {
             Node *novo = criarNo(nome, rg);
@@ -30,16 +30,7 @@ void lerLista(Node **cabeca, const char *nomeArquivo) {
         }
     }
 
-    /* 
-    // — OU — 
-    // 2) Usando fscanf direto, sem buffer intermediário:
-    while (fscanf(arq, " %49[^,],%d", nome, &rg) == 2) {
-        Node *novo = criarNo(nome, rg);
-        if (!*cabeca) *cabeca = novo;
-        else          tail->next = novo;
-        tail = novo;
-    }
-    */
+    
 
     fclose(arq);
 

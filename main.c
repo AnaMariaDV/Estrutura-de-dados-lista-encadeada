@@ -6,7 +6,7 @@ int main() {
     Node *cabeca = NULL;
     menu(&cabeca);
     
-    // Libera a memória da lista, se necessário.
+   
     Node *atual;
     while(cabeca != NULL) {
         atual = cabeca;

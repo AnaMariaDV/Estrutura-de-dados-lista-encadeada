@@ -1,4 +1,4 @@
-//Retirar um nó do início da lista e apresentar Nome, RG, C(n), M(n), Tempo de execução e sua posição N na lista..
+
 #include"lib.h"
 
 void removerNoInicio(Node **cabeca) {
