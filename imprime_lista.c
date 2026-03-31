@@ -14,5 +14,3 @@ void imprimirLista(Node *cabeca) {
         pos++;
     }
 }
-
-

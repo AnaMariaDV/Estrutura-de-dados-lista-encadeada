@@ -3,7 +3,7 @@ void removerNoPosicao(Node **cabeca, int posDesejada) {
    int comp = 0, mov = 0, pos = 1;
    clock_t inicio = clock();
    
-   if(*cabeca == NULL || posDesejada < 1 || posDesejada > 0) {
+   if(*cabeca == NULL || posDesejada < 1 || posDesejada <1) {
        printf("\nPosicao invalida.\n");
        return;
    }
